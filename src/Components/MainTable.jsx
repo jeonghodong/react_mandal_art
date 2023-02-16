@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Wrap = styled.div`
   display: grid;
@@ -34,23 +35,40 @@ const Cover = styled.div`
   height: 58%;
 `;
 
-function Table({ text1 }) {
-  console.log(text1);
+function MainTable({ onKeyUp }) {
   return (
     <Wrap>
       <InnerBox>
         <Cover>
-          <Input placeholder="목표1" maxLength={14} />
+          <Input
+            placeholder="목표1"
+            maxLength={14}
+            onKeyUp={(event) => {
+              onKeyUp(event, 0);
+            }}
+          />
         </Cover>
       </InnerBox>
       <InnerBox>
         <Cover>
-          <Input placeholder="목표2" maxLength={14} />
+          <Input
+            placeholder="목표2"
+            maxLength={14}
+            onKeyUp={(event) => {
+              onKeyUp(event, 1);
+            }}
+          />
         </Cover>
       </InnerBox>
       <InnerBox>
         <Cover>
-          <Input placeholder="목표3" maxLength={14} />
+          <Input
+            placeholder="목표3"
+            maxLength={14}
+            onKeyUp={(event) => {
+              onKeyUp(event, 2);
+            }}
+          />
         </Cover>
       </InnerBox>
       <InnerBox>
@@ -60,7 +78,7 @@ function Table({ text1 }) {
       </InnerBox>
       <InnerBox>
         <Cover>
-          <Input placeholder="목표" maxLength={14} value={text1[0].value || ""} />
+          <Input placeholder="메인" maxLength={14} />
         </Cover>
       </InnerBox>
       <InnerBox>
@@ -87,4 +105,8 @@ function Table({ text1 }) {
   );
 }
 
-export default Table;
+MainTable.propTypes = {
+  onKeyDown: PropTypes.func.isRequired,
+};
+
+export default MainTable;
