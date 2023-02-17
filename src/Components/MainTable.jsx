@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 const Wrap = styled.div`
   display: grid;
@@ -73,7 +72,13 @@ function MainTable({ onKeyUp }) {
       </InnerBox>
       <InnerBox>
         <Cover>
-          <Input placeholder="목표4" maxLength={14} />
+          <Input
+            placeholder="목표4"
+            maxLength={14}
+            onKeyUp={(event) => {
+              onKeyUp(event, 3);
+            }}
+          />
         </Cover>
       </InnerBox>
       <InnerBox>
@@ -83,30 +88,50 @@ function MainTable({ onKeyUp }) {
       </InnerBox>
       <InnerBox>
         <Cover>
-          <Input placeholder="목표6" maxLength={14} />
+          <Input
+            placeholder="목표6"
+            maxLength={14}
+            onKeyUp={(event) => {
+              onKeyUp(event, 5);
+            }}
+          />
         </Cover>
       </InnerBox>
       <InnerBox>
         <Cover>
-          <Input placeholder="목표7" maxLength={14} />
-        </Cover>{" "}
+          <Input
+            placeholder="목표7"
+            maxLength={14}
+            onKeyUp={(event) => {
+              onKeyUp(event, 6);
+            }}
+          />
+        </Cover>
       </InnerBox>
       <InnerBox>
         <Cover>
-          <Input placeholder="목표8" maxLength={14} />
-        </Cover>{" "}
+          <Input
+            placeholder="목표8"
+            maxLength={14}
+            onKeyUp={(event) => {
+              onKeyUp(event, 7);
+            }}
+          />
+        </Cover>
       </InnerBox>
       <InnerBox>
         <Cover>
-          <Input placeholder="목표9" maxLength={13} />
-        </Cover>{" "}
+          <Input
+            placeholder="목표9"
+            maxLength={13}
+            onKeyUp={(event) => {
+              onKeyUp(event, 8);
+            }}
+          />
+        </Cover>
       </InnerBox>
     </Wrap>
   );
 }
-
-MainTable.propTypes = {
-  onKeyDown: PropTypes.func.isRequired,
-};
 
 export default MainTable;

@@ -35,7 +35,6 @@ const Cover = styled.div`
 `;
 
 function Table({ text1 }) {
-  console.log(text1);
   return (
     <Wrap>
       <InnerBox>
@@ -60,7 +59,7 @@ function Table({ text1 }) {
       </InnerBox>
       <InnerBox>
         <Cover>
-          <Input placeholder="목표" maxLength={14} value={text1[0].value || ""} />
+          <Input placeholder="목표" maxLength={14} defaultValue={text1} readonly />
         </Cover>
       </InnerBox>
       <InnerBox>
