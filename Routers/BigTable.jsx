@@ -18,44 +18,16 @@ const Contianer = styled.div`
 `;
 
 function BigTable() {
-  const [text1, setText1] = useState([
-    {
-      id: 0,
-      value: "목표1",
-    },
-    {
-      id: 1,
-      value: "목표2",
-    },
-    {
-      id: 2,
-      value: "목표3",
-    },
-    {
-      id: 3,
-      value: "목표4",
-    },
-    {
-      id: 4,
-      value: "목표5",
-    },
-    {
-      id: 5,
-      value: "목표6",
-    },
-    {
-      id: 6,
-      value: "목표7",
-    },
-    {
-      id: 7,
-      value: "목표8",
-    },
-    {
-      id: 8,
-      value: "목표9",
-    },
-  ]);
+  const [text1, setText1] = useState(() => {
+    const a = [];
+    for (let i = 0; i < 9; i++) {
+      a.push({
+        id: `${i}`,
+        value: `목표${i}`,
+      });
+    }
+    return a;
+  });
   const onKeyUp = (event, index) => {
     text1[index].value = event.target.value;
     setText1([...text1]);
