@@ -53,7 +53,7 @@ function MainTable({ onKeyUp }) {
               <InnerBox>
                 <Cover>
                   <Input
-                    placeholder="목표1"
+                    placeholder="세부 목표"
                     maxLength={14}
                     onKeyUp={(event) => {
                       onKeyUp(event, i);
