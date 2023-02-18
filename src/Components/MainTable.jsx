@@ -37,99 +37,33 @@ const Cover = styled.div`
 function MainTable({ onKeyUp }) {
   return (
     <Wrap>
-      <InnerBox>
-        <Cover>
-          <Input
-            placeholder="목표1"
-            maxLength={14}
-            onKeyUp={(event) => {
-              onKeyUp(event, 0);
-            }}
-          />
-        </Cover>
-      </InnerBox>
-      <InnerBox>
-        <Cover>
-          <Input
-            placeholder="목표2"
-            maxLength={14}
-            onKeyUp={(event) => {
-              onKeyUp(event, 1);
-            }}
-          />
-        </Cover>
-      </InnerBox>
-      <InnerBox>
-        <Cover>
-          <Input
-            placeholder="목표3"
-            maxLength={14}
-            onKeyUp={(event) => {
-              onKeyUp(event, 2);
-            }}
-          />
-        </Cover>
-      </InnerBox>
-      <InnerBox>
-        <Cover>
-          <Input
-            placeholder="목표4"
-            maxLength={14}
-            onKeyUp={(event) => {
-              onKeyUp(event, 3);
-            }}
-          />
-        </Cover>
-      </InnerBox>
-      <InnerBox>
-        <Cover>
-          <Input placeholder="메인" maxLength={14} />
-        </Cover>
-      </InnerBox>
-      <InnerBox>
-        <Cover>
-          <Input
-            placeholder="목표6"
-            maxLength={14}
-            onKeyUp={(event) => {
-              onKeyUp(event, 5);
-            }}
-          />
-        </Cover>
-      </InnerBox>
-      <InnerBox>
-        <Cover>
-          <Input
-            placeholder="목표7"
-            maxLength={14}
-            onKeyUp={(event) => {
-              onKeyUp(event, 6);
-            }}
-          />
-        </Cover>
-      </InnerBox>
-      <InnerBox>
-        <Cover>
-          <Input
-            placeholder="목표8"
-            maxLength={14}
-            onKeyUp={(event) => {
-              onKeyUp(event, 7);
-            }}
-          />
-        </Cover>
-      </InnerBox>
-      <InnerBox>
-        <Cover>
-          <Input
-            placeholder="목표9"
-            maxLength={13}
-            onKeyUp={(event) => {
-              onKeyUp(event, 8);
-            }}
-          />
-        </Cover>
-      </InnerBox>
+      {Array(9)
+        .fill(1)
+        .map((_, i) => {
+          if (i === 4) {
+            return (
+              <InnerBox>
+                <Cover>
+                  <Input placeholder="메인" maxLength={14} />
+                </Cover>
+              </InnerBox>
+            );
+          } else {
+            return (
+              <InnerBox>
+                <Cover>
+                  <Input
+                    placeholder="목표1"
+                    maxLength={14}
+                    onKeyUp={(event) => {
+                      onKeyUp(event, i);
+                    }}
+                  />
+                </Cover>
+              </InnerBox>
+            );
+          }
+        })}
     </Wrap>
   );
 }
