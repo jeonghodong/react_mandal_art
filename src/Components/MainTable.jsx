@@ -42,7 +42,7 @@ function MainTable({ onKeyUp }) {
         .map((_, i) => {
           if (i === 4) {
             return (
-              <InnerBox>
+              <InnerBox key={i}>
                 <Cover>
                   <Input placeholder="메인" maxLength={14} />
                 </Cover>
@@ -50,7 +50,7 @@ function MainTable({ onKeyUp }) {
             );
           } else {
             return (
-              <InnerBox>
+              <InnerBox key={i}>
                 <Cover>
                   <Input
                     placeholder="세부 목표"
