@@ -39,7 +39,11 @@ function BigTable() {
           if (i === 4) {
             return <MainTable onKeyUp={onKeyUp} key={v.value} />;
           } else {
-            return <Table text1={v.value} key={v.value} />;
+            return (
+              <div key={v.id}>
+                <Table text1={v.value} key={v.value} />
+              </div>
+            );
           }
         })}
       </Wrap>
