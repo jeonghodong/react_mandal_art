@@ -37,7 +37,11 @@ function BigTable() {
       <Wrap>
         {text1.map((v, i) => {
           if (i === 4) {
-            return <MainTable onKeyUp={onKeyUp} key={v.value} />;
+            return (
+              <div key={v.id}>
+                <MainTable onKeyUp={onKeyUp} key={v.value} />
+              </div>
+            );
           } else {
             return (
               <div key={v.id}>
