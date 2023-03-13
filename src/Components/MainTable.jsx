@@ -44,7 +44,7 @@ function MainTable({ onKeyUp }) {
             return (
               <InnerBox key={i}>
                 <Cover>
-                  <Input placeholder="메인" maxLength={14} />
+                  <Input placeholder="메인 목표" maxLength={14} />
                 </Cover>
               </InnerBox>
             );

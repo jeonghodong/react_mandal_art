@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Wrap = styled.div`
@@ -20,7 +20,7 @@ const InnerBox = styled.div`
 const Input = styled.textarea`
   font-family: "Poppins-Bold";
   width: 100%;
-  height: 100%;
+  height: 139%;
   text-align: center;
   border: 1px solid #000;
   resize: none;
@@ -32,54 +32,66 @@ const Input = styled.textarea`
 `;
 const Cover = styled.div`
   height: 58%;
+  transition: background-color 0.3s ease;
+  background-color: ${({ active }) => (active ? "#fff" : "#333")};
 `;
 
 function Table({ text1 }) {
+  const [active, setActive] = useState(false);
+
+  const handleInputChange = (e) => {
+    if (e.target.value !== "") {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  };
+
   return (
     <Wrap>
       <InnerBox>
-        <Cover>
-          <Input placeholder="목표1" maxLength={14} />
+        <Cover active={active}>
+          <Input placeholder="" maxLength={14} onChange={handleInputChange} />
         </Cover>
       </InnerBox>
       <InnerBox>
-        <Cover>
-          <Input placeholder="목표2" maxLength={14} />
+        <Cover active={active}>
+          <Input placeholder="" maxLength={14} onChange={handleInputChange} />
         </Cover>
       </InnerBox>
       <InnerBox>
-        <Cover>
-          <Input placeholder="목표3" maxLength={14} />
+        <Cover active={active}>
+          <Input placeholder="" maxLength={14} onChange={handleInputChange} />
         </Cover>
       </InnerBox>
       <InnerBox>
-        <Cover>
-          <Input placeholder="목표4" maxLength={14} />
+        <Cover active={active}>
+          <Input placeholder="" maxLength={14} onChange={handleInputChange} />
         </Cover>
       </InnerBox>
       <InnerBox>
-        <Cover>
-          <Input placeholder="목표" maxLength={14} defaultValue={text1} readonly />
+        <Cover active={active}>
+          <Input placeholder="" maxLength={14} defaultValue={text1} readOnly onChange={handleInputChange} />
         </Cover>
       </InnerBox>
       <InnerBox>
-        <Cover>
-          <Input placeholder="목표6" maxLength={14} />
+        <Cover active={active}>
+          <Input placeholder="" maxLength={14} onChange={handleInputChange} />
         </Cover>
       </InnerBox>
       <InnerBox>
-        <Cover>
-          <Input placeholder="목표7" maxLength={14} />
+        <Cover active={active}>
+          <Input placeholder="" maxLength={14} onChange={handleInputChange} />
         </Cover>{" "}
       </InnerBox>
       <InnerBox>
-        <Cover>
-          <Input placeholder="목표8" maxLength={14} />
+        <Cover active={active}>
+          <Input placeholder="" maxLength={14} onChange={handleInputChange} />
         </Cover>{" "}
       </InnerBox>
       <InnerBox>
-        <Cover>
-          <Input placeholder="목표9" maxLength={13} />
+        <Cover active={active}>
+          <Input placeholder="" maxLength={13} onChange={handleInputChange} />
         </Cover>{" "}
       </InnerBox>
     </Wrap>
